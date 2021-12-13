@@ -1,5 +1,3 @@
-m = float(input("Введите сумму, которую вы хотите положить на депозит: "))
-
 per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
 
 for k, v in per_cent.items():
@@ -7,7 +5,14 @@ for k, v in per_cent.items():
 
 print("Сумма, которую вы можете заработать: ", list(per_cent.values()))
 
-print("Самый выгодный депозит в банке: ", max(per_cent, key=per_cent.get))
+my_max_val = 0
+for k,v in per_cent.items():
+    if v > my_max_val:
+        my_max_val=v
+        my_max_key=k
 
+print("Самый выгодный депозит в банке: ", my_max_key)
+
+print("Сумма самого выгодного депозита: ", my_max_val)
 
 
